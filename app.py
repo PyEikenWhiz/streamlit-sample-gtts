@@ -11,7 +11,7 @@ tts = gTTS(text, lang='en')
 
 # Save the audio to a file (you can specify the filename)
 tts.save("output.mp3")
-#st.write("output.mp3")
+st.write("output.mp3")
 st.audio("output.mp3")
 
 print("Text-to-speech conversion complete! Check the 'output.mp3' file.")
