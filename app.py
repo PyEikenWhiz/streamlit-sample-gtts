@@ -8,7 +8,7 @@ st.write(text)
 
 # Initialize gTTS object with the text and language (en for English)
 selected = st.radio("Language",["English", "Japanese"])
-lang_code = {"English":"en", "Japanese":"jp"}
+lang_code = {"English":"en", "Japanese":"ja"}
 tts = gTTS(text, lang=lang_code[selected])
 
 if text:
