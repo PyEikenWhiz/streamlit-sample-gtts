@@ -20,13 +20,13 @@ if text:
   st.audio(audio_bytes)
 
   # Save the audio as "saved_audio.mp3" and add a download button
-  with open("saved_audio.mp3", "wb") as f:
-      f.write(audio_bytes.getvalue())
+  #with open("saved_audio.mp3", "wb") as f:
+  #    f.write(audio_bytes.getvalue())
   st.write("Audio saved as 'saved_audio.mp3'")  # Inform the user
   st.download_button(
       label="Download Audio",
       data=audio_bytes,
-      file_name="'saved_audio.mp3",
+      file_name="saved_audio.mp3",
       mime="mp3"
   )
   print("Text-to-speech conversion complete! ")
