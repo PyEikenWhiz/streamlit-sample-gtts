@@ -1,5 +1,6 @@
 # Import the gTTS library
 from gtts import gTTS
+import io
 import streamlit as st
 
 # Text to be converted to speech
@@ -12,9 +13,10 @@ selected = st.radio("Language",["English", "Japanese"])
 tts = gTTS(text, lang=lang_code[selected])
 
 if text:
-  # Save the audio to a file (you can specify the filename)
-  tts.save("output.mp3")
-  st.write("output.mp3")
-  st.audio("output.mp3")
+  # Save the audio to a bytes-like object
+  audio_bytes = io.BytesIO()
+  tts.write_to_fp(audio_bytes)
+  st.write("Audio!")
+  st.audio(audio_bytes)
 
-  print("Text-to-speech conversion complete! Check the 'output.mp3' file.")
+  print("Text-to-speech conversion complete! ")
