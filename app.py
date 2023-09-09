@@ -3,6 +3,8 @@ from gtts import gTTS
 import io
 import streamlit as st
 
+st.set_page_config(page_title="This is gTTS audio downlowader", page_icon=":loudspeaker:")
+
 # Text to be converted to speech
 text = st.text_input(label="Message", value="Hello there, welcome to the world of text-to-speech!")
 st.write(text)
@@ -19,10 +21,7 @@ if text:
   st.write("Audio!")
   st.audio(audio_bytes)
 
-  # Save the audio as "saved_audio.mp3" and add a download button
-  #with open("saved_audio.mp3", "wb") as f:
-  #    f.write(audio_bytes.getvalue())
-  st.write("Audio saved as 'saved_audio.mp3'")  # Inform the user
+  st.write("Check the Audio file!")  # Inform the user
   st.download_button(
       label="Download Audio",
       data=audio_bytes,
